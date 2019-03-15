@@ -1,6 +1,4 @@
-import discord
-import random
-import time
+import discord, random, time, os
 from discord.ext.commands import Bot
 
 
@@ -44,4 +42,4 @@ async def omikuji(*args):
     luck = ["大凶", "凶", "小吉", "大吉", "小凶", "吉"]
     return await kumirei.say(luck[(random.randint(0, len(luck) - 1))] + "でした！")
 
-kumirei.run("MzIzNTYzMzI0MDUyODY1MDM0.DCAU2w.Tp3IB3Uv0chcv8vMqHgPkvmxOAY")
+kumirei.run(os.environ.get('ENVIRONMENT_VARIABLE'))
